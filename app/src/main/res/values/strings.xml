@@ -1,12 +1,12 @@
 <resources>
     <string name="app_name">tiendaApi</string>
-        <string name="txtTitulo">Lista de productos</string>
-        <string name="txtProducto">Producto</string>
-        <string name="txtPrecio">Precio $</string>
+    <string name="txtTitulo">Lista de productos</string>
+    <string name="txtProducto">Producto</string>
+    <string name="txtPrecio">Precio $</string>
 
-        <string name="txtDetallePrecio">Precio $</string>
-        <string name="txtDetalleProducto">Producto $</string>
-        <string name="txtDetalleDescripcion">Descripción $</string>
-        <string name="txtDetalleDescripcionMas">Descripción detallada $</string>
+    <string name="txtDetallePrecio">Precio $</string>
+    <string name="txtDetalleProducto">Producto $</string>
+    <string name="txtDetalleDescripcion">Descripción $</string>
+    <string name="txtDetalleDescripcionMas">Descripción detallada $</string>
 
-    </resources>
+</resources>

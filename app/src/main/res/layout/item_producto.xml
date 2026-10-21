@@ -17,7 +17,7 @@
 
         <!-- Imagen a la izquierda -->
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/imgProducto"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:scaleType="centerCrop"

@@ -35,15 +35,16 @@ android {
 
 dependencies {
     // Librería principal de Kotlinx Serialization Json
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.11.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
     // Convertidor oficial de Retrofit para Kotlinx Serialization
-    implementation("com.squareup.retrofit2:converter-kotlinx-serialization:3.0.0")
+    implementation("com.squareup.retrofit2:converter-kotlinx-serialization:2.11.0")
     // Retrofit & OkHttp
-    implementation("com.squareup.retrofit2:retrofit:3.0.0")
-    implementation("com.squareup.okhttp3:okhttp:5.5.0")
+    implementation("com.squareup.retrofit2:retrofit:2.11.0")
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
 
     // Para imágenes (Glide)
-    implementation("com.github.bumptech.glide:glide:5.0.9")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+
     implementation(libs.androidx.activity.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.constraintlayout)
