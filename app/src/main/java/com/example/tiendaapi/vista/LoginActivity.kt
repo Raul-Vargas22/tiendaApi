@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -21,8 +20,6 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var txtClave: EditText
     private lateinit var btnLogin: Button
 
-    private lateinit var imgLogin: ImageView
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -33,14 +30,15 @@ class LoginActivity : AppCompatActivity() {
             insets
         }
 
+        // 1. Enlazar componentes XML
         txtUsuario = findViewById(R.id.txtUsuario)
         txtClave = findViewById(R.id.txtClave)
         btnLogin = findViewById(R.id.btnLogin)
-        imgLogin = findViewById(R.id.imgLogin)
 
+        // 2. Inicializar Presentador
         presenter = clsLoginPresentador(this)
 
-
+        // 3. Listener del botón
         btnLogin.setOnClickListener(this::ejecutarInicioSesion)
     }
 

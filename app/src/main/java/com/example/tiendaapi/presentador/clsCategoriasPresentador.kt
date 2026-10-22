@@ -23,7 +23,8 @@ class clsCategoriasPresentador(private val vista: MainActivity) {
                 vista.mostrarCategorias(listaCategorias)
                 seleccionarCategoria(0)
             } catch (e: Exception) {
-                vista.mostrarError("Error al cargar categorías: ${e.message ?: "Error desconocido"}"
+                vista.mostrarError(
+                    "Error al cargar categorías: ${e.message ?: "Error desconocido"}"
                 )
             }
         }

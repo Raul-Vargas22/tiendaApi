@@ -32,14 +32,14 @@ class ProductosAdaptador(
     override fun onBindViewHolder(holder: ProductoViewHolder, position: Int) {
         val producto = listaProductos[position]
 
-
         holder.tvNombre.text = producto.nombre
         holder.tvPrecio.text = "$${producto.precio}"
 
-        val baseUrl = "http://10.226.139.102/tienda_api/"
+        val baseUrl = "http://192.168.8.17/tienda_api/"
         val rutaImagen = producto.urlimagenprincipal.trim().removePrefix("/")
 
-        val urlImagenCompleta = if (rutaImagen.startsWith("http://") || rutaImagen.startsWith("https://")) {
+        val urlImagenCompleta = if (rutaImagen.startsWith("http://") ||
+            rutaImagen.startsWith("https://")) {
             rutaImagen
         } else {
             baseUrl + rutaImagen

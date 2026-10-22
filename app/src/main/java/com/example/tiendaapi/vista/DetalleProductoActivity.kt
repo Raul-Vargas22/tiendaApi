@@ -52,7 +52,7 @@ class DetalleProductoActivity : AppCompatActivity() {
         val precio = intent.getDoubleExtra("PRECIO_PRODUCTO", 0.0)
 
         txtNombre.text = nombre
-        txtPrecio.text = "$precio"
+        txtPrecio.text = "$$precio"
         txtDescripcion.text = descripcion
 
         presenter = clsDetalleProductoPresentador(this)
