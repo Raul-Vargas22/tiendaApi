@@ -14,14 +14,12 @@ class clsDetalleProductoPresentador(private val vista: DetalleProductoActivity) 
     fun cargarDetalle(productoId: Int) {
         CoroutineScope(Dispatchers.Main).launch {
             try {
-                val listaImagenes: List<dataImagenesProducto> =
-                    modelo.obtenerDetalleProducto(productoId)
+                val listaImagenes: List<dataImagenesProducto> = modelo.obtenerDetalleProducto(productoId)
 
                 vista.mostrarImagenes(listaImagenes)
 
             } catch (e: Exception) {
-                vista.mostrarError(
-                    "Error al cargar detalle: ${e.localizedMessage ?: "Error desconocido"}"
+                vista.mostrarError("Error al cargar detalle: ${e.localizedMessage ?: "Error desconocido"}"
                 )
             }
         }

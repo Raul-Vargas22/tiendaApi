@@ -11,6 +11,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tiendaapi.Adaptador.ProductosAdaptador
@@ -46,7 +47,7 @@ class MainActivity : AppCompatActivity() {
         spnCategorias = findViewById(R.id.spnCategorias)
         recyclerProductos = findViewById(R.id.rvLista)
 
-        recyclerProductos.layoutManager = LinearLayoutManager(this)
+        recyclerProductos.layoutManager = GridLayoutManager(this,2)
         adapterProductos = ProductosAdaptador(this, emptyList())
         recyclerProductos.adapter = adapterProductos
 
@@ -60,12 +61,7 @@ class MainActivity : AppCompatActivity() {
         spnCategorias.onItemSelectedListener =
             object : AdapterView.OnItemSelectedListener {
 
-                override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?,
-                    position: Int,
-                    id: Long
-                ) {
+                override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
                     if (primeraSeleccion) {
                         primeraSeleccion = false
                         return
@@ -78,15 +74,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun mostrarCategorias(categorias: List<dataCategorias>) {
-        val adapter = ArrayAdapter(
-            this,
-            android.R.layout.simple_spinner_item,
-            categorias
-        )
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, categorias)
 
-        adapter.setDropDownViewResource(
-            android.R.layout.simple_spinner_dropdown_item
-        )
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
         spnCategorias.adapter = adapter
         primeraSeleccion = true
@@ -113,18 +103,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun mostrarMensajeExito(id: Int, nombre: String) {
-        Toast.makeText(
-            this,
-            "$id - Seleccionaste $nombre",
-            Toast.LENGTH_SHORT
-        ).show()
+        Toast.makeText(this, "$id - Seleccionaste $nombre", Toast.LENGTH_SHORT).show()
     }
 
     fun mostrarError(mensaje: String) {
-        Toast.makeText(
-            this,
-            mensaje,
-            Toast.LENGTH_LONG
-        ).show()
+        Toast.makeText(this, mensaje, Toast.LENGTH_LONG).show()
     }
 }
